@@ -1,16 +1,14 @@
-[
-{
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
-]
+[{
+	"modid": "bedwars-stats",
+	"name": "Bedwars Stats Mod",
+	"description": "View peoples bedwars stats ingame! [Made for Hypixel]",
+	"version": "1.0",
+	"mcversion": "${mcversion}",
+	"url": "https://github.com/ConorTheOreo/Bedwars-Stats",
+	"updateUrl": "",
+	"authorList": ["ConorTheOreo"],
+	"credits": "",
+	"logoFile": "",
+	"screenshots": [],
+	"dependencies": []
+}]
