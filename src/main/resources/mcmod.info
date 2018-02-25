@@ -1,8 +1,8 @@
 [{
 	"modid": "bedwars-stats",
 	"name": "Bedwars Stats Mod",
-	"description": "View peoples bedwars stats ingame! [Made for Hypixel]",
-	"version": "1.0",
+	"description": "View Bedwars Stats! [Made for Hypixel]",
+	"version": "1",
 	"mcversion": "${mcversion}",
 	"url": "https://github.com/ConorTheOreo/Bedwars-Stats",
 	"updateUrl": "",
