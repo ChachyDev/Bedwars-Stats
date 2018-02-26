@@ -1,5 +1,6 @@
 package conortheoreo.bedwarsStats.Main;
 
+import conortheoreo.bedwarsStats.Config.ConfigManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -18,7 +19,7 @@ public class MainClass {
 
     public int totalStars;
 
-    private File ConfigFile = //Config.getConfigFile();
+    private File ConfigFile = ConfigManager.getConfigFile();
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
