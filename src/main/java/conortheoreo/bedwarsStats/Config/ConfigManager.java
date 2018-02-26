@@ -44,7 +44,7 @@ public class ConfigManager {
                 saveSettings();
             }
             System.out.println("reading...");
-            //MainClass.whatever = (ConfigManager.config.has("whatever") && ConfigManager.config.get("whatever").getAsBoolean());
+            //Config.whatever = (ConfigManager.config.has("whatever") && ConfigManager.config.get("whatever").getAsBoolean());
         } else {
             log("Config does not exist! Saving...", new String[0]);
             saveSettings();
