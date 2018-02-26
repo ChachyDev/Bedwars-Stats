@@ -1,5 +1,6 @@
 package conortheoreo.bedwarsStats.Config;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import conortheoreo.bedwarsStats.Main.MainClass;
@@ -19,6 +20,8 @@ public class Config {
 
     private static final File configFile = new File(new File(String.valueOf(Minecraft.getMinecraft().mcDataDir.getPath()) + "/config/BedwarsStats"), "BedwarsStats.config");
     private static JsonObject config;
+
+    Gson gson = new Gson();
 
     public static boolean configExists() {
         return exists(Config.configFile.getPath());
