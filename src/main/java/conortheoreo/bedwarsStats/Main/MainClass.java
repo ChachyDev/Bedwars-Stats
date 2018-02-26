@@ -4,6 +4,7 @@ import conortheoreo.bedwarsStats.Config.ConfigManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -23,6 +24,8 @@ public class MainClass {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        FMLCommonHandler.instance().bus().register(this);
+        ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
     }
 
