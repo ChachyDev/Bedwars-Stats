@@ -12,6 +12,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
+import java.util.Timer;
+
+import static conortheoreo.bedwarsstats.config.ConfigManager.saveSettings;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
@@ -29,6 +32,8 @@ public class MainClass {
         FMLCommonHandler.instance().bus().register(this);
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
+        Timer timer = new Timer();
+        timer.schedule(new SaveAll(), 0, 20000);
     }
 
     @SubscribeEvent
@@ -38,6 +43,9 @@ public class MainClass {
         }
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
         fr.drawString("Total Stars:" + Settings.getTotalStars_Colour() + totalStars,Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y() , Settings.getTotalStars_Colour());
+    }
+    public static void SaveAll() {
+        saveSettings();
     }
 
 }

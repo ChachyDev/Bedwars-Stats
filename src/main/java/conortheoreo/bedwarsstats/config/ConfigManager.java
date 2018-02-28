@@ -44,10 +44,12 @@ public class ConfigManager {
                 resetSettings();
             }
             System.out.println("reading...");
-            //config.whatever = (ConfigManager.config.has("whatever") && ConfigManager.config.get("whatever").getAsBoolean());
+            Settings.setTotalStars_Position_X(ConfigManager.config.get("TotalStarsX").getAsInt());
+            Settings.setTotalStars_Position_Y(ConfigManager.config.get("TotalStarsY").getAsInt());
         } else {
             log("config does not exist! Saving...", new String[0]);
             saveSettings();
+            resetSettings();
         }
     }
 
@@ -60,7 +62,8 @@ public class ConfigManager {
             ConfigManager.ConfigFile.createNewFile();
             final FileWriter ex = new FileWriter(ConfigManager.ConfigFile);
             final BufferedWriter bufferedWriter = new BufferedWriter(ex);
-            //ConfigManager.config.addProperty("whatever", Settings.whatever);
+            ConfigManager.config.addProperty("TotalStarsX", Settings.getTotalStars_Position_X());
+            ConfigManager.config.addProperty("TotalStarsY", Settings.getTotalStars_Position_Y());
             bufferedWriter.write(ConfigManager.config.toString());
             bufferedWriter.close();
             ex.close();
