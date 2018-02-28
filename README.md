@@ -1,4 +1,4 @@
-# Bedwars-Stats
+# Bedwars Stats
 The Bedwars Stats Mod
 
 # FAQ
