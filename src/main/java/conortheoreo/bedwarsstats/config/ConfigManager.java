@@ -71,7 +71,9 @@ public class ConfigManager {
     }
 
     public static void resetSettings() {
-        Settings.setTotalStars_Colour(123);
+        Settings.setTotalStars_Colour(0);
+        Settings.setTotalStars_Position_Y(5);
+        Settings.setTotalStars_Position_X(5);
     }
 
     private static boolean exists(final String path) {
