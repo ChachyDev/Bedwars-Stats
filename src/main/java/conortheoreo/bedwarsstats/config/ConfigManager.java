@@ -1,8 +1,7 @@
-package conortheoreo.bedwarsStats.Config;
+package conortheoreo.bedwarsstats.config;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import conortheoreo.bedwarsStats.Main.MainClass;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
 
@@ -26,8 +25,8 @@ public class ConfigManager {
 
     public static void loadSettings() {
         if (configExists()) {
-            log("Config file exists! Reading...", new String[0]);
-            System.out.println("Config file exists! Reading..");
+            log("config file exists! Reading...", new String[0]);
+            System.out.println("config file exists! Reading..");
             try {
                 final FileReader ex = new FileReader(ConfigManager.ConfigFile);
                 final BufferedReader bufferedReader = new BufferedReader(ex);
@@ -45,9 +44,9 @@ public class ConfigManager {
                 resetSettings();
             }
             System.out.println("reading...");
-            //Config.whatever = (ConfigManager.config.has("whatever") && ConfigManager.config.get("whatever").getAsBoolean());
+            //config.whatever = (ConfigManager.config.has("whatever") && ConfigManager.config.get("whatever").getAsBoolean());
         } else {
-            log("Config does not exist! Saving...", new String[0]);
+            log("config does not exist! Saving...", new String[0]);
             saveSettings();
         }
     }

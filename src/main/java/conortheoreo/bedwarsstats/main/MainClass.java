@@ -1,10 +1,9 @@
-package conortheoreo.bedwarsStats.Main;
+package conortheoreo.bedwarsstats.main;
 
-import conortheoreo.bedwarsStats.Config.ConfigManager;
-import conortheoreo.bedwarsStats.Config.Settings;
+import conortheoreo.bedwarsstats.config.ConfigManager;
+import conortheoreo.bedwarsstats.config.Settings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;

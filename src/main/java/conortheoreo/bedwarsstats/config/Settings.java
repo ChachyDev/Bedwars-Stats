@@ -1,4 +1,4 @@
-package conortheoreo.bedwarsStats.Config;
+package conortheoreo.bedwarsstats.config;
 
 public class Settings {
 
