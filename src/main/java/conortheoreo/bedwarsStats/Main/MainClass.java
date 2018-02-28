@@ -16,7 +16,6 @@ import java.io.File;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
-    FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
 
     public static final String MODID = "bedwars-stats";
     public static final String VERSION = "1";
@@ -38,7 +37,8 @@ public class MainClass {
         if (event.isCancelable() || event.type != RenderGameOverlayEvent.ElementType.EXPERIENCE) {
             return;
         }
-        fr.drawString(Settings.getTotalStars_Colour() + "Total Stars:" + Settings.getTotalStars_Colour() + totalStars,Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y() , Settings.getTotalStars_Colour());
+        FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
+        fr.drawString("Total Stars:" + Settings.getTotalStars_Colour() + totalStars,Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y() , Settings.getTotalStars_Colour());
     }
 
 }
