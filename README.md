@@ -2,17 +2,11 @@
 The Bedwars Stats Mod
 
 # FAQ
+**Q:** When is the mod getting released?<br>
+**A:** Not Sure
 
-Q: When is the mod getting released?
+**Q:** Why your code so bad?<br>
+**A:** stop bullying me kerby :(
 
-A: Not Sure
-
-Q: Why your code so bad?
-
-A: stop bullying me :(
-
-Q: Can I contribute to the mod
-
-A: Yep! just fork and create a pull request!
-
-
+**Q:** Can I contribute to the mod<br>
+**A:** Yep! just fork and create a pull request!
