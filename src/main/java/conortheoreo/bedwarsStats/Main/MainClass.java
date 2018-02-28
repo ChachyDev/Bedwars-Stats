@@ -1,7 +1,9 @@
 package conortheoreo.bedwarsStats.Main;
 
 import conortheoreo.bedwarsStats.Config.ConfigManager;
+import conortheoreo.bedwarsStats.Config.Settings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -14,6 +16,8 @@ import java.io.File;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
+    FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
+
     public static final String MODID = "bedwars-stats";
     public static final String VERSION = "1";
     public static final String MCVERSION = "[1.8.9]";
@@ -34,7 +38,7 @@ public class MainClass {
         if (event.isCancelable() || event.type != RenderGameOverlayEvent.ElementType.EXPERIENCE) {
             return;
         }
-        Minecraft.getMinecraft().fontRendererObj.drawString(EnumChatFormatting.GREEN + "Total Stars:" + EnumChatFormatting.WHITE + totalStars, 5, 5, 0);
+        fr.drawString(Settings.getTotalStars_Colour() + "Total Stars:" + Settings.getTotalStars_Colour() + totalStars,Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y() , Settings.getTotalStars_Colour());
     }
 
 }

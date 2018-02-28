@@ -42,6 +42,7 @@ public class ConfigManager {
             } catch (Exception var5) {
                 log("Could not write config! Saving...", new String[0]);
                 saveSettings();
+                resetSettings();
             }
             System.out.println("reading...");
             //Config.whatever = (ConfigManager.config.has("whatever") && ConfigManager.config.get("whatever").getAsBoolean());
@@ -60,7 +61,7 @@ public class ConfigManager {
             ConfigManager.ConfigFile.createNewFile();
             final FileWriter ex = new FileWriter(ConfigManager.ConfigFile);
             final BufferedWriter bufferedWriter = new BufferedWriter(ex);
-            //ConfigManager.config.addProperty("whatever", MainClass.whatever);
+            //ConfigManager.config.addProperty("whatever", Settings.whatever);
             bufferedWriter.write(ConfigManager.config.toString());
             bufferedWriter.close();
             ex.close();
@@ -68,6 +69,10 @@ public class ConfigManager {
             log("Could not save config!", new String[0]);
             var2.printStackTrace();
         }
+    }
+
+    public static void resetSettings() {
+        Settings.setTotalStars_Colour(123);
     }
 
     private static boolean exists(final String path) {
