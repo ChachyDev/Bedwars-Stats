@@ -21,15 +21,15 @@ public class BedwarsLevel {
         }
     }
 
-    private static final String KEY = "";
+    private static final String KEY = null;
 
     public static void main() throws Exception {
         HypixelAPI api = new HypixelAPI(KEY);
         HypixelPlayer player = api.getPlayer(username);
         Bedwars bw = player.getStats().getBedwars();
         System.out.println(username + "'s Stats:");
-        System.out.println("Bedwars Level: " + bw.getExperienceNew());
-        MainClass.totalStars = (int) bw.getExperienceNew();
+        System.out.println("Bedwars Level: " + bw.getExperience());
+        MainClass.totalStars = bw.getExperience();
         if (player.getLastNick() != null) {
             System.out.println("The player is currently nicked: " + player.getLastNick());
         }

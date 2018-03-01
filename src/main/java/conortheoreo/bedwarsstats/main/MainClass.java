@@ -1,30 +1,23 @@
 package conortheoreo.bedwarsstats.main;
 
+import conortheoreo.bedwarsstats.commands.UpdateLevel;
 import conortheoreo.bedwarsstats.config.ConfigManager;
 import conortheoreo.bedwarsstats.config.Settings;
-import conortheoreo.bedwarsstats.stats.KeyReader;
+import conortheoreo.bedwarsstats.handlers.isHypixel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.GuiCustomizeWorldScreen;
-import net.minecraft.client.gui.GuiMainMenu;
-import net.minecraft.client.gui.GuiRenameWorld;
-import net.minecraft.stats.Achievement;
-import net.minecraftforge.client.event.GuiOpenEvent;
+import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderHandEvent;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 
 import java.io.File;
-import java.util.Timer;
-
-import static conortheoreo.bedwarsstats.config.ConfigManager.saveSettings;
-import static conortheoreo.bedwarsstats.stats.BedwarsLevel.getBedwarsLevel;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
@@ -32,23 +25,18 @@ public class MainClass {
     public static final String MODID = "bedwars-stats";
     public static final String VERSION = "1";
     public static final String MCVERSION = "[1.8.9]";
+    public static long totalStars;
 
-    String fileName = "C:\\Users\\conor\\Desktop\\Bedwars-Stats\\apikey.key";
-
-    public static int totalStars;
-
-    private File ConfigFile = ConfigManager.getConfigFile();
+    private static File ConfigFile = ConfigManager.getConfigFile();
+    private boolean hypixel;
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
         FMLCommonHandler.instance().bus().register(this);
+        FMLCommonHandler.instance().bus().register(new isHypixel());
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-    }
-
-    @SubscribeEvent
-    public void hand(RenderHandEvent e) {
-        getBedwarsLevel();
+        ClientCommandHandler.instance.registerCommand(new UpdateLevel());
     }
 
     @SubscribeEvent
