@@ -32,20 +32,14 @@ public class MainClass {
         FMLCommonHandler.instance().bus().register(this);
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-        Timer timer = new Timer();
-        timer.schedule(new SaveAll(), 0, 20000);
     }
 
     @SubscribeEvent
     public void render(RenderGameOverlayEvent event) {
-        if (event.isCancelable() || event.type != RenderGameOverlayEvent.ElementType.EXPERIENCE) {
+        if (event.type != RenderGameOverlayEvent.ElementType.CHAT) {
             return;
         }
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
-        fr.drawString("Total Stars:" + Settings.getTotalStars_Colour() + totalStars,Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y() , Settings.getTotalStars_Colour());
+        fr.drawString("test Stars:" + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
     }
-    public static void SaveAll() {
-        saveSettings();
-    }
-
 }
