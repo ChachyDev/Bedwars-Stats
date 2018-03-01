@@ -14,18 +14,18 @@ public class BedwarsLevel {
     private static String username = Minecraft.getMinecraft().thePlayer.getName();
 
     public static void getBedwarsLevel() {
-        System.out.println(username);
         try {
-            main(username);
+            main();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    private static final String KEY = KeyReader.main(KeyReader.fileName);
 
-    public static void main(String args) throws Exception {
+    private static final String KEY = "";
+
+    public static void main() throws Exception {
         HypixelAPI api = new HypixelAPI(KEY);
-        HypixelPlayer player = api.getPlayer(args);
+        HypixelPlayer player = api.getPlayer(username);
         Bedwars bw = player.getStats().getBedwars();
         System.out.println(username + "'s Stats:");
         System.out.println("Bedwars Level: " + bw.getExperienceNew());

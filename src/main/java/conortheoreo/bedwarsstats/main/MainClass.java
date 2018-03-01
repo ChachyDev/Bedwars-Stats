@@ -11,12 +11,14 @@ import net.minecraft.client.gui.GuiRenameWorld;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderHandEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 
 import java.io.File;
 import java.util.Timer;
@@ -44,12 +46,17 @@ public class MainClass {
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
     }
 
+    @SubscribeEvent
+    public void hand(RenderHandEvent e) {
+        getBedwarsLevel();
+    }
 
     @SubscribeEvent
     public void render(RenderGameOverlayEvent event) {
         if (event.type != RenderGameOverlayEvent.ElementType.CHAT) {
             return;
         }
+
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
         fr.drawString("Bedwars Level: " + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
     }
