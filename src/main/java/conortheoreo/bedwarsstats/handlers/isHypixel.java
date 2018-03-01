@@ -11,6 +11,10 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import scala.runtime.AbstractFunction0$mcB$sp;
 
+import static conortheoreo.bedwarsstats.config.Settings.getApiChecked;
+import static conortheoreo.bedwarsstats.config.Settings.getApiChecked;
+import static conortheoreo.bedwarsstats.config.Settings.setApiChecked;
+
 public class isHypixel {
 
     private boolean hypixel;
@@ -19,16 +23,22 @@ public class isHypixel {
         https://github.com/Sk1er/Levelhead/
     */
     @SubscribeEvent
-    public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event, ClientChatReceivedEvent chatmsg) {
+    public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
         hypixel = !FMLClientHandler.instance().getClient().isSingleplayer()
                 && (FMLClientHandler.instance().getClient().getCurrentServerData().serverIP.contains("hypixel.net") ||
                 FMLClientHandler.instance().getClient().getCurrentServerData().serverName.equalsIgnoreCase("HYPIXEL"));
-        if (hypixel == true && Minecraft.getMinecraft().theWorld != null) {
-            System.out.println("Connected to Hypixel");
-            Minecraft.getMinecraft().thePlayer.sendChatMessage("/api");
-            if (chatmsg.equals("")) {
+        System.out.println("Connected to Hypixel");
+        Minecraft.getMinecraft().thePlayer.sendChatMessage("/api");
+    }
 
-            }else {
+    @SubscribeEvent
+    public void testmeth(ClientChatReceivedEvent chatmsg) {
+        if (hypixel == true && Minecraft.getMinecraft().theWorld != null) {
+            if (chatmsg.equals("You already have an API Key, are you sure you want to regenerate it?\n" +
+                    "Click to run /api new") && getApiChecked() == false) {
+                setApiChecked(true);
+                System.out.println(getApiChecked());
+            }else if (chatmsg.equals("")) {
 
             }
         }

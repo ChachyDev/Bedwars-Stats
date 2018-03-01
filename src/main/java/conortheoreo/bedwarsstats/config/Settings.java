@@ -5,6 +5,7 @@ public class Settings {
     private static int TotalStars_Position_X;
     private static int TotalStars_Position_Y;
     private static int TotalStars_Colour;
+    private static boolean apiChecked;
 
 
     //getters and setters
@@ -26,6 +27,14 @@ public class Settings {
 
     public static int getTotalStars_Colour() {
         return TotalStars_Colour;
+    }
+
+    public static boolean getApiChecked() {
+        return apiChecked;
+    }
+
+    public static void setApiChecked(boolean apiChecked) {
+        apiChecked = apiChecked;
     }
 
     public static void setTotalStars_Colour(int totalStars_Colour) {

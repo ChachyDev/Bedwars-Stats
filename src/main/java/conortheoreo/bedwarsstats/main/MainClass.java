@@ -19,6 +19,8 @@ import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 
 import java.io.File;
 
+import static conortheoreo.bedwarsstats.config.Settings.setApiChecked;
+
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
 
@@ -32,11 +34,12 @@ public class MainClass {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        FMLCommonHandler.instance().bus().register(this);
         FMLCommonHandler.instance().bus().register(new isHypixel());
+        FMLCommonHandler.instance().bus().register(this);
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
         ClientCommandHandler.instance.registerCommand(new UpdateLevel());
+        setApiChecked(false);
     }
 
     @SubscribeEvent
