@@ -15,6 +15,7 @@ import java.io.File;
 import java.util.Timer;
 
 import static conortheoreo.bedwarsstats.config.ConfigManager.saveSettings;
+import static conortheoreo.bedwarsstats.stats.BedwarsLevel.getBedwarsLevel;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
@@ -39,7 +40,8 @@ public class MainClass {
         if (event.type != RenderGameOverlayEvent.ElementType.CHAT) {
             return;
         }
+        getBedwarsLevel();
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
-        fr.drawString("test Stars:" + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
+        fr.drawString("Bedwars Level: " + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
     }
 }
