@@ -33,6 +33,7 @@ public class MainClass {
         FMLCommonHandler.instance().bus().register(this);
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
+        getBedwarsLevel();
     }
 
     @SubscribeEvent
@@ -40,7 +41,6 @@ public class MainClass {
         if (event.type != RenderGameOverlayEvent.ElementType.CHAT) {
             return;
         }
-        getBedwarsLevel();
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
         fr.drawString("Bedwars Level: " + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
     }
