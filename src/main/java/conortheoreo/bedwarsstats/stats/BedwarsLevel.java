@@ -1,5 +1,6 @@
 package conortheoreo.bedwarsstats.stats;
 
+import conortheoreo.bedwarsstats.main.MainClass;
 import me.kbrewster.hypixelapi.HypixelAPI;
 import me.kbrewster.hypixelapi.player.HypixelPlayer;
 import me.kbrewster.hypixelapi.player.stats.bedwars.Bedwars;
@@ -15,7 +16,7 @@ public class BedwarsLevel {
     public static void getBedwarsLevel() {
         System.out.println(username);
     }
-    private static final String KEY = "KEY_HERE";
+    private static final String KEY = KeyReader.main(KeyReader.fileName);
 
     public static void main(String[] args) throws Exception {
         HypixelAPI api = new HypixelAPI(KEY);
@@ -23,6 +24,7 @@ public class BedwarsLevel {
         Bedwars bw = player.getStats().getBedwars();
         System.out.println(username + "'s Stats:");
         System.out.println("Bedwars Level: " + bw.getExperienceNew());
+        MainClass.totalStars = (int) bw.getExperienceNew();
         if (player.getLastNick() != null) {
             System.out.println("The player is currently nicked: " + player.getLastNick());
         }
