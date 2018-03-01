@@ -5,11 +5,16 @@ import conortheoreo.bedwarsstats.config.Settings;
 import conortheoreo.bedwarsstats.stats.KeyReader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiCustomizeWorldScreen;
+import net.minecraft.client.gui.GuiMainMenu;
+import net.minecraft.stats.Achievement;
+import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
@@ -36,7 +41,15 @@ public class MainClass {
         FMLCommonHandler.instance().bus().register(this);
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-        getBedwarsLevel();
+    }
+
+    @SubscribeEvent
+    public void onGuiOpen(GuiOpenEvent event) {
+        if(event.gui instanceof GuiCustomizeWorldScreen) {
+            getBedwarsLevel();
+        }else {
+
+        }
     }
 
     @SubscribeEvent

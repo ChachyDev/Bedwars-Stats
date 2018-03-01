@@ -11,16 +11,21 @@ import scala.runtime.AbstractFunction0$mcB$sp;
 public class BedwarsLevel {
 
     final Minecraft mc = Minecraft.getMinecraft();
-    private static String username = Minecraft.getMinecraft().thePlayer.getDisplayNameString();
+    private static String username = Minecraft.getMinecraft().thePlayer.getName();
 
     public static void getBedwarsLevel() {
         System.out.println(username);
+        try {
+            main(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     private static final String KEY = KeyReader.main(KeyReader.fileName);
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String args) throws Exception {
         HypixelAPI api = new HypixelAPI(KEY);
-        HypixelPlayer player = api.getPlayer(username);
+        HypixelPlayer player = api.getPlayer(args);
         Bedwars bw = player.getStats().getBedwars();
         System.out.println(username + "'s Stats:");
         System.out.println("Bedwars Level: " + bw.getExperienceNew());
