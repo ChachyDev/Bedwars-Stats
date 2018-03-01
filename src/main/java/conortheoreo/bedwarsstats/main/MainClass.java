@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiCustomizeWorldScreen;
 import net.minecraft.client.gui.GuiMainMenu;
+import net.minecraft.client.gui.GuiRenameWorld;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -43,14 +44,6 @@ public class MainClass {
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
     }
 
-    @SubscribeEvent
-    public void onGuiOpen(GuiOpenEvent event) {
-        if(event.gui instanceof GuiCustomizeWorldScreen) {
-            getBedwarsLevel();
-        }else {
-
-        }
-    }
 
     @SubscribeEvent
     public void render(RenderGameOverlayEvent event) {
