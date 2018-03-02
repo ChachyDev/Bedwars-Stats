@@ -4,14 +4,13 @@ import conortheoreo.bedwarsstats.main.MainClass;
 import me.kbrewster.hypixelapi.HypixelAPI;
 import me.kbrewster.hypixelapi.player.HypixelPlayer;
 import me.kbrewster.hypixelapi.player.stats.bedwars.Bedwars;
-import me.kbrewster.hypixelapi.player.stats.uhc.UHC;
 import net.minecraft.client.Minecraft;
-import scala.runtime.AbstractFunction0$mcB$sp;
 
 public class BedwarsLevel {
 
-    final Minecraft mc = Minecraft.getMinecraft();
+    private static final String KEY = null;
     private static String username = Minecraft.getMinecraft().thePlayer.getName();
+    final Minecraft mc = Minecraft.getMinecraft();
 
     public static void getBedwarsLevel() {
         try {
@@ -20,8 +19,6 @@ public class BedwarsLevel {
             e.printStackTrace();
         }
     }
-
-    private static final String KEY = null;
 
     public static void main() throws Exception {
         HypixelAPI api = new HypixelAPI(KEY);

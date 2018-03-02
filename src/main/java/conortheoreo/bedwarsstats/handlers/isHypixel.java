@@ -11,17 +11,19 @@ import static conortheoreo.bedwarsstats.config.Settings.setApiChecked;
 
 public class isHypixel {
 
-    private static boolean hypixel  = !FMLClientHandler.instance().getClient().isSingleplayer()
-            && (FMLClientHandler.instance().getClient().getCurrentServerData().serverIP.contains("hypixel.net") ||
-            FMLClientHandler.instance().getClient().getCurrentServerData().serverName.equalsIgnoreCase("HYPIXEL"));;
+    private static boolean hypixel;
 
     public static boolean getIsHypixel() {
+        hypixel = !FMLClientHandler.instance().getClient().isSingleplayer()
+                && (FMLClientHandler.instance().getClient().getCurrentServerData().serverIP.contains("hypixel.net") ||
+                FMLClientHandler.instance().getClient().getCurrentServerData().serverName.equalsIgnoreCase("HYPIXEL"));
         return hypixel;
     }
 
     /*credit to Sk1er for this
             https://github.com/Sk1er/Levelhead/
-        */
+    */
+
     @SubscribeEvent
     public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
         System.out.println("Connected to Hypixel");
@@ -39,7 +41,7 @@ public class isHypixel {
                     "Click to run /api new") && getApiChecked() == false) {
                 setApiChecked(true);
                 System.out.println(getApiChecked());
-            }else if (chatmsg.equals("")) {
+            } else if (chatmsg.equals("")) {
 
             }
         }
