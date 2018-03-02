@@ -20,6 +20,7 @@ import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import java.io.File;
 
 import static conortheoreo.bedwarsstats.config.Settings.setApiChecked;
+import static conortheoreo.bedwarsstats.handlers.isHypixel.getIsHypixel;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {
@@ -30,7 +31,6 @@ public class MainClass {
     public static long totalStars;
 
     private static File ConfigFile = ConfigManager.getConfigFile();
-    private boolean hypixel;
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
@@ -47,8 +47,9 @@ public class MainClass {
         if (event.type != RenderGameOverlayEvent.ElementType.CHAT) {
             return;
         }
-
-        FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
-        fr.drawString("Bedwars Level: " + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
+        if (getIsHypixel() == true) {
+            FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
+            fr.drawString("Bedwars Level: " + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
+        }
     }
 }

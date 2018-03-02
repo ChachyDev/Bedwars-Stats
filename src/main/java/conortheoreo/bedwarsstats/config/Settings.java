@@ -1,12 +1,13 @@
 package conortheoreo.bedwarsstats.config;
 
+import net.minecraftforge.fml.client.FMLClientHandler;
+
 public class Settings {
 
     private static int TotalStars_Position_X;
     private static int TotalStars_Position_Y;
     private static int TotalStars_Colour;
     private static boolean apiChecked;
-
 
     //getters and setters
     public static int getTotalStars_Position_X() {
