@@ -5,7 +5,7 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 
-public class UpdateLevel extends CommandBase {
+public class ForceUpdate extends CommandBase {
 
 
     @Override

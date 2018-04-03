@@ -1,6 +1,6 @@
 package expressso.bedwarsstats;
 
-import expressso.bedwarsstats.commands.UpdateLevel;
+import expressso.bedwarsstats.commands.ForceUpdate;
 import expressso.bedwarsstats.config.ConfigManager;
 import expressso.bedwarsstats.config.Settings;
 import expressso.bedwarsstats.handlers.isHypixel;
@@ -35,7 +35,7 @@ public class BedwarsStats {
         FMLCommonHandler.instance().bus().register(this);
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-        ClientCommandHandler.instance.registerCommand(new UpdateLevel());
+        ClientCommandHandler.instance.registerCommand(new ForceUpdate());
         setApiChecked(false);
     }
 
