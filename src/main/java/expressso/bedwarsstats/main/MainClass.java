@@ -25,7 +25,7 @@ public class MainClass {
     public static final String MODID = "bedwars-stats";
     public static final String VERSION = "1";
     public static final String MCVERSION = "[1.8.9]";
-    public static long totalStars;
+    public long totalStars;
 
     private static File ConfigFile = ConfigManager.getConfigFile();
 
@@ -44,7 +44,7 @@ public class MainClass {
         if (event.type != RenderGameOverlayEvent.ElementType.CHAT) {
             return;
         }
-        if (getIsHypixel() == true) {
+        if (getIsHypixel()) {
             FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
             fr.drawString("Bedwars Level: " + Settings.getTotalStars_Colour() + totalStars, Settings.getTotalStars_Position_X(), Settings.getTotalStars_Position_Y(), Settings.getTotalStars_Colour());
         }

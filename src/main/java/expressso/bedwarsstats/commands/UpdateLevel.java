@@ -10,12 +10,12 @@ public class UpdateLevel extends CommandBase {
 
     @Override
     public String getCommandName() {
-        return "updatelevel";
+        return "forceupdate";
     }
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "updatelevel";
+        return "forceupdate";
     }
 
     @Override
