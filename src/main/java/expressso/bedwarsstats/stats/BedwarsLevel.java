@@ -1,6 +1,6 @@
 package expressso.bedwarsstats.stats;
 
-import expressso.bedwarsstats.main.MainClass;
+import expressso.bedwarsstats.BedwarsStats;
 import me.kbrewster.hypixelapi.HypixelAPI;
 import me.kbrewster.hypixelapi.player.HypixelPlayer;
 import me.kbrewster.hypixelapi.player.stats.bedwars.Bedwars;
@@ -26,7 +26,7 @@ public class BedwarsLevel {
         Bedwars bw = player.getStats().getBedwars();
         System.out.println(username + "'s Stats:");
         System.out.println("Bedwars Level: " + bw.getExperience());
-        MainClass.totalStars = bw.getExperience();
+        BedwarsStats.totalStars = bw.getExperience();
         if (player.getLastNick() != null) {
             System.out.println("The player is currently nicked: " + player.getLastNick());
         }

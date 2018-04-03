@@ -1,4 +1,4 @@
-package expressso.bedwarsstats.main;
+package expressso.bedwarsstats;
 
 import expressso.bedwarsstats.commands.UpdateLevel;
 import expressso.bedwarsstats.config.ConfigManager;
@@ -19,8 +19,8 @@ import java.io.File;
 import static expressso.bedwarsstats.config.Settings.setApiChecked;
 import static expressso.bedwarsstats.handlers.isHypixel.getIsHypixel;
 
-@Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
-public class MainClass {
+@Mod(modid = BedwarsStats.MODID, version = BedwarsStats.VERSION, acceptedMinecraftVersions = BedwarsStats.MCVERSION)
+public class BedwarsStats {
 
     public static final String MODID = "bedwars-stats";
     public static final String VERSION = "1";
