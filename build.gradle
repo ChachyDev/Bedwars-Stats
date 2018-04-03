@@ -7,6 +7,12 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
+        repositories {
+        jcenter()
+            maven {
+                url "https://jitpack.io" 
+            }
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
@@ -22,7 +28,7 @@ allprojects {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "1"
-group= "conortheoreo.bedwarsstats.main.MainClass" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "expressso.bedwarsstats.BedwarsStats" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bedwars-stats"
 
 minecraft {
@@ -33,6 +39,7 @@ minecraft {
 
 dependencies {
     compile "com.github.KevinPriv:HypixelApi4J:API-1.7"
+    compile "com.github.KevinPriv:BlazeAPI:Tag"
 }
 
 processResources
