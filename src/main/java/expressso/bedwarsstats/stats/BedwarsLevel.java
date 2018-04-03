@@ -1,6 +1,6 @@
-package conortheoreo.bedwarsstats.stats;
+package expressso.bedwarsstats.stats;
 
-import conortheoreo.bedwarsstats.main.MainClass;
+import expressso.bedwarsstats.main.MainClass;
 import me.kbrewster.hypixelapi.HypixelAPI;
 import me.kbrewster.hypixelapi.player.HypixelPlayer;
 import me.kbrewster.hypixelapi.player.stats.bedwars.Bedwars;

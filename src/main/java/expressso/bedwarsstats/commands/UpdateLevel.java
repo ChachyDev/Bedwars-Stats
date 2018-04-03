@@ -1,10 +1,9 @@
-package conortheoreo.bedwarsstats.commands;
+package expressso.bedwarsstats.commands;
 
+import expressso.bedwarsstats.stats.BedwarsLevel;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
-
-import static conortheoreo.bedwarsstats.stats.BedwarsLevel.getBedwarsLevel;
 
 public class UpdateLevel extends CommandBase {
 
@@ -21,7 +20,7 @@ public class UpdateLevel extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        getBedwarsLevel();
+        BedwarsLevel.getBedwarsLevel();
     }
 
     @Override

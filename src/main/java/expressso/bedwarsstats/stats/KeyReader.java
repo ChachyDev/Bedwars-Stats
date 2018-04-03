@@ -1,4 +1,4 @@
-package conortheoreo.bedwarsstats.stats;
+package expressso.bedwarsstats.stats;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

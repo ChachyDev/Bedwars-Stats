@@ -1,9 +1,9 @@
-package conortheoreo.bedwarsstats.main;
+package expressso.bedwarsstats.main;
 
-import conortheoreo.bedwarsstats.commands.UpdateLevel;
-import conortheoreo.bedwarsstats.config.ConfigManager;
-import conortheoreo.bedwarsstats.config.Settings;
-import conortheoreo.bedwarsstats.handlers.isHypixel;
+import expressso.bedwarsstats.commands.UpdateLevel;
+import expressso.bedwarsstats.config.ConfigManager;
+import expressso.bedwarsstats.config.Settings;
+import expressso.bedwarsstats.handlers.isHypixel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraftforge.client.ClientCommandHandler;
@@ -16,8 +16,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
 
-import static conortheoreo.bedwarsstats.config.Settings.setApiChecked;
-import static conortheoreo.bedwarsstats.handlers.isHypixel.getIsHypixel;
+import static expressso.bedwarsstats.config.Settings.setApiChecked;
+import static expressso.bedwarsstats.handlers.isHypixel.getIsHypixel;
 
 @Mod(modid = MainClass.MODID, version = MainClass.VERSION, acceptedMinecraftVersions = MainClass.MCVERSION)
 public class MainClass {

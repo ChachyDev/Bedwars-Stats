@@ -1,4 +1,4 @@
-package conortheoreo.bedwarsstats.config;
+package expressso.bedwarsstats.config;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

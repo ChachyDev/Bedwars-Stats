@@ -1,13 +1,11 @@
-package conortheoreo.bedwarsstats.handlers;
+package expressso.bedwarsstats.handlers;
 
+import expressso.bedwarsstats.config.Settings;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
-
-import static conortheoreo.bedwarsstats.config.Settings.getApiChecked;
-import static conortheoreo.bedwarsstats.config.Settings.setApiChecked;
 
 public class isHypixel {
 
@@ -38,9 +36,9 @@ public class isHypixel {
     public void testmeth(ClientChatReceivedEvent chatmsg) {
         if (hypixel == true && Minecraft.getMinecraft().theWorld != null) {
             if (chatmsg.equals("You already have an API Key, are you sure you want to regenerate it?\n" +
-                    "Click to run /api new") && getApiChecked() == false) {
-                setApiChecked(true);
-                System.out.println(getApiChecked());
+                    "Click to run /api new") && Settings.getApiChecked() == false) {
+                Settings.setApiChecked(true);
+                System.out.println(Settings.getApiChecked());
             } else if (chatmsg.equals("")) {
 
             }

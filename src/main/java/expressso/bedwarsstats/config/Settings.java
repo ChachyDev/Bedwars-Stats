@@ -1,4 +1,4 @@
-package conortheoreo.bedwarsstats.config;
+package expressso.bedwarsstats.config;
 
 import net.minecraftforge.fml.client.FMLClientHandler;
 
