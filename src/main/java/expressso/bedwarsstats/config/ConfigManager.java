@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -19,13 +18,13 @@ public class ConfigManager {
         return ConfigFile;
     }
 
-    public static boolean configExists() {
+    private static boolean configExists() {
         return exists(ConfigManager.ConfigFile.getPath());
     }
 
     public static void loadSettings() {
         if (configExists()) {
-            log("config file exists! Reading...", new String[0]);
+            log("config file exists! Reading...");
             System.out.println("config file exists! Reading..");
             try {
                 final FileReader ex = new FileReader(ConfigManager.ConfigFile);
@@ -39,7 +38,7 @@ public class ConfigManager {
                 final String complete = builder.toString();
                 ConfigManager.config = new JsonParser().parse(complete).getAsJsonObject();
             } catch (Exception var5) {
-                log("Could not write config! Saving...", new String[0]);
+                log("Could not write config! Saving...");
                 saveSettings();
                 resetSettings();
             }
@@ -47,13 +46,13 @@ public class ConfigManager {
             Settings.setTotalStars_Position_X(ConfigManager.config.get("TotalStarsX").getAsInt());
             Settings.setTotalStars_Position_Y(ConfigManager.config.get("TotalStarsY").getAsInt());
         } else {
-            log("config does not exist! Saving...", new String[0]);
+            log("config does not exist! Saving...");
             saveSettings();
             resetSettings();
         }
     }
 
-    public static void saveSettings() {
+    private static void saveSettings() {
         ConfigManager.config = new JsonObject();
         try {
             if (!ConfigManager.ConfigFile.getParentFile().exists()) {
@@ -68,23 +67,23 @@ public class ConfigManager {
             bufferedWriter.close();
             ex.close();
         } catch (Exception var2) {
-            log("Could not save config!", new String[0]);
+            log("Could not save config!");
             var2.printStackTrace();
         }
     }
 
-    public static void resetSettings() {
+    private static void resetSettings() {
         Settings.setTotalStars_Colour(0);
         Settings.setTotalStars_Position_Y(5);
         Settings.setTotalStars_Position_X(5);
     }
 
     private static boolean exists(final String path) {
-        return Files.exists(Paths.get(path, new String[0]), new LinkOption[0]);
+        return Files.exists(Paths.get(path));
     }
 
     private static void log(final Object message, final String... replacements) {
-        LogManager.getLogger("FileUtils").info(String.format(String.valueOf(message), replacements));
+        LogManager.getLogger("FileUtils").info(String.format(String.valueOf(message), (Object) replacements));
     }
 }
 
