@@ -15,7 +15,7 @@ public class Settings {
     public static void setTotalStars_Position_X(int totalStars_Position_X) {
         TotalStars_Position_X = totalStars_Position_X;
     }
-
+    
     public static int getTotalStars_Position_Y() {
         return TotalStars_Position_Y;
     }
