@@ -31,7 +31,7 @@ public class HypixelUtils {
     @SubscribeEvent
     public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
         getIsHypixel();
-        await().atMost(10, SECONDS).until(() -> hypixel && Minecraft.getMinecraft().theWorld != null);
+        //await().atMost(10, SECONDS).until(() -> hypixel && Minecraft.getMinecraft().theWorld != null);
         String apiCommand = "api";
         Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
         /*
