@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -25,14 +26,14 @@ public class BedwarsStats {
     public static final String MODID = "bedwars-stats";
     public static final String VERSION = "1";
     public static final String MCVERSION = "[1.8.9]";
-    public long totalStars;
+    public static long totalStars;
 
     private static File ConfigFile = ConfigManager.getConfigFile();
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        FMLCommonHandler.instance().bus().register(new isHypixel());
-        FMLCommonHandler.instance().bus().register(this);
+        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new isHypixel());
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
         ClientCommandHandler.instance.registerCommand(new ForceUpdate());

@@ -24,12 +24,9 @@ public class isHypixel {
 
     @SubscribeEvent
     public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
-        System.out.println("Connected to Hypixel");
-    }
-
-    @SubscribeEvent
-    public void anothertest(FMLNetworkEvent.ClientConnectedToServerEvent e) {
-
+        if (!event.isLocal) {
+            getIsHypixel();
+        }
     }
 
     @SubscribeEvent
