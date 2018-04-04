@@ -30,7 +30,7 @@ public class HypixelUtils {
     */
 
     @SubscribeEvent
-    public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
+    public void onJoin(final FMLNetworkEvent.ClientConnectedToServerEvent event) {
         Multithreading.runAsync(new Runnable() {
             public void run() {
                 while (Minecraft.getMinecraft().thePlayer == null) {
@@ -45,8 +45,10 @@ public class HypixelUtils {
                     }
                 }
                 getIsHypixel();
-                String apiCommand = "/api";
-                Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
+                if (!event.isLocal) {
+                    String apiCommand = "/api";
+                    Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
+                }
             }
         });
     }
