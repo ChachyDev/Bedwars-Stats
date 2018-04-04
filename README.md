@@ -1,4 +1,4 @@
- ![Discord](https://canary.discordapp.com/api/guilds/430765697388511251/widget.png) ]
+[ ![Discord](https://canary.discordapp.com/api/guilds/430765697388511251/widget.png) ](https://discord.gg/gNUcvcU)
 
 # Bedwars Stats
 The Bedwars Stats Mod
