@@ -1,7 +1,5 @@
 package expressso.bedwarsstats.config;
 
-import net.minecraftforge.fml.client.FMLClientHandler;
-
 public class Settings {
 
     private static int TotalStars_Position_X;
@@ -30,15 +28,15 @@ public class Settings {
         return TotalStars_Colour;
     }
 
+    public static void setTotalStars_Colour(int totalStars_Colour) {
+        TotalStars_Colour = totalStars_Colour;
+    }
+
     public static boolean getApiChecked() {
         return apiChecked;
     }
 
     public static void setApiChecked(boolean apiChecked) {
         apiChecked = apiChecked;
-    }
-
-    public static void setTotalStars_Colour(int totalStars_Colour) {
-        TotalStars_Colour = totalStars_Colour;
     }
 }
