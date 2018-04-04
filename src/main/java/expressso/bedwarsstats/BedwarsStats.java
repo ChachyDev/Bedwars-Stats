@@ -3,7 +3,7 @@ package expressso.bedwarsstats;
 import expressso.bedwarsstats.commands.ForceUpdate;
 import expressso.bedwarsstats.config.ConfigManager;
 import expressso.bedwarsstats.config.Settings;
-import expressso.bedwarsstats.handlers.isHypixel;
+import expressso.bedwarsstats.handlers.IsHypixel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraftforge.client.ClientCommandHandler;
@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.io.File;
 
 import static expressso.bedwarsstats.config.Settings.setApiChecked;
-import static expressso.bedwarsstats.handlers.isHypixel.getIsHypixel;
+import static expressso.bedwarsstats.handlers.IsHypixel.getIsHypixel;
 
 @Mod(modid = BedwarsStats.MODID, version = BedwarsStats.VERSION, acceptedMinecraftVersions = BedwarsStats.MCVERSION)
 public class BedwarsStats {
@@ -32,7 +32,7 @@ public class BedwarsStats {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(new isHypixel());
+        MinecraftForge.EVENT_BUS.register(new IsHypixel());
         ConfigManager.loadSettings();
         System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
         ClientCommandHandler.instance.registerCommand(new ForceUpdate());
