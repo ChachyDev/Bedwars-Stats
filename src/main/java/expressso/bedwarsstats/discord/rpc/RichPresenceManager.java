@@ -6,7 +6,7 @@ import net.minecraft.client.Minecraft;
 
 public class RichPresenceManager {
 
-    private static void run(String applicationId)
+    public static void run(String applicationId)
     {
         DiscordRpc discordRpc = new DiscordRpc();
 

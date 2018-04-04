@@ -3,6 +3,7 @@ package expressso.bedwarsstats;
 import expressso.bedwarsstats.commands.ForceUpdate;
 import expressso.bedwarsstats.config.ConfigManager;
 import expressso.bedwarsstats.config.Settings;
+import expressso.bedwarsstats.discord.rpc.RichPresenceManager;
 import expressso.bedwarsstats.keybinds.Keybinds;
 import expressso.bedwarsstats.utils.HypixelUtils;
 import net.minecraft.client.Minecraft;
@@ -38,6 +39,7 @@ public class BedwarsStats {
         ConfigManager.loadSettings();
         //System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
         Keybinds.load();
+        RichPresenceManager.run("431086888804286465");
     }
 
     @SubscribeEvent
