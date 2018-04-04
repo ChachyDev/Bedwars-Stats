@@ -51,8 +51,7 @@ public class HypixelUtils {
 
     @SubscribeEvent
     public void checkMSG(ClientChatReceivedEvent event) {
-        if (event.message.equals("You already have an API Key, are you sure you want to regenerate it?\n" +
-                "Click to run /api new")) {
+        if (event.message.getUnformattedText().contains("You already have an API Key")) {
             MessageBox.infoBox("It seems you already have an API Key! You need to your API key to continue using the mod!", "Bedwars Stats Mod", JOptionPane.ERROR_MESSAGE);
             MessageBox.inputBox("Please enter your API key below (if you don't have it saved, generate one with /apinew", "Bedwars Stats Mod", JOptionPane.PLAIN_MESSAGE);
         }
