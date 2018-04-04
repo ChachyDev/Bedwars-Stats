@@ -44,7 +44,7 @@ public class HypixelUtils {
                 }
             }
             getIsHypixel();
-            String apiCommand = "api";
+            String apiCommand = "/api";
             Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
         /*
         wait until (!hypixel && Minecraft.getMinecraft().theWorld != null) {
