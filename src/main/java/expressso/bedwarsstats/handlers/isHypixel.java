@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.awaitility.Awaitility.await;
 
-public class isHypixel {
+public class IsHypixel {
 
     private static boolean hypixel;
 
