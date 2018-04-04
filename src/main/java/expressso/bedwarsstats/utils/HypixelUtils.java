@@ -44,8 +44,7 @@ public class HypixelUtils {
                         e.printStackTrace();
                     }
                 }
-                getIsHypixel();
-                if (!event.isLocal & hypixel) {
+                if (getIsHypixel()) {
                     String apiCommand = "/api";
                     Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
                 }
