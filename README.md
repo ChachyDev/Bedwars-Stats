@@ -1,3 +1,5 @@
+<iframe src="https://discordapp.com/widget?id=430765697388511251&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+
 # Bedwars Stats
 The Bedwars Stats Mod
 
