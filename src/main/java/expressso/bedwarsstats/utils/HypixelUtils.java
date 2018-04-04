@@ -1,4 +1,4 @@
-package expressso.bedwarsstats.handlers;
+package expressso.bedwarsstats.utils;
 
 import expressso.bedwarsstats.config.Settings;
 import net.minecraft.client.Minecraft;
@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.awaitility.Awaitility.await;
 
-public class IsHypixel {
+public class HypixelUtils {
 
     private static boolean hypixel;
 
