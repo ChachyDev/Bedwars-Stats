@@ -3,6 +3,7 @@ package expressso.bedwarsstats;
 import expressso.bedwarsstats.commands.ForceUpdate;
 import expressso.bedwarsstats.config.ConfigManager;
 import expressso.bedwarsstats.config.Settings;
+import expressso.bedwarsstats.keybinds.Keybinds;
 import expressso.bedwarsstats.utils.HypixelUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -36,7 +37,7 @@ public class BedwarsStats {
         ClientCommandHandler.instance.registerCommand(new ForceUpdate());
         ConfigManager.loadSettings();
         //System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-        setApiChecked(false);
+        Keybinds.load();
     }
 
     @SubscribeEvent
