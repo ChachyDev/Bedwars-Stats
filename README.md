@@ -1,4 +1,4 @@
-<iframe src="https://discordapp.com/widget?id=430765697388511251&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+ ![Discord](https://canary.discordapp.com/api/guilds/430765697388511251/widget.png) ](https://discord.gg/gNUcvcU)
 
 # Bedwars Stats
 The Bedwars Stats Mod
