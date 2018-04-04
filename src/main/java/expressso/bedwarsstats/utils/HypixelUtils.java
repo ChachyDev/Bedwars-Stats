@@ -15,6 +15,7 @@ import static org.awaitility.Awaitility.await;
 
 public class HypixelUtils {
 
+    private static int tries;
     private static boolean hypixel;
 
     public static boolean getIsHypixel() {
@@ -30,16 +31,28 @@ public class HypixelUtils {
 
     @SubscribeEvent
     public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
-        getIsHypixel();
-        await().atMost(10, SECONDS).until(() -> hypixel && Minecraft.getMinecraft().theWorld != null);
-        String apiCommand = "api";
-        Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
+        Multithreading.runAsync(() -> {
+            while (Minecraft.getMinecraft().thePlayer == null) {
+                tries++;
+                if (tries > 20 * 10) {
+                    return;
+                }
+                try {
+                    Thread.sleep(50L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            getIsHypixel();
+            String apiCommand = "api";
+            Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
         /*
         wait until (!hypixel && Minecraft.getMinecraft().theWorld != null) {
             String apiCommand = "api";
             Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
         }
         */
+        });
     }
 
     @SubscribeEvent

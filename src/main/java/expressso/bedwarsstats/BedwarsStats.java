@@ -33,9 +33,9 @@ public class BedwarsStats {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new HypixelUtils());
-        ConfigManager.loadSettings();
-        System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
         ClientCommandHandler.instance.registerCommand(new ForceUpdate());
+        ConfigManager.loadSettings();
+        //System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
         setApiChecked(false);
     }
 
