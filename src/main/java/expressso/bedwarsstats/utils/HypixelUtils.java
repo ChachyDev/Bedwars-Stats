@@ -31,21 +31,23 @@ public class HypixelUtils {
 
     @SubscribeEvent
     public void onJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
-        Multithreading.runAsync(() -> {
-            while (Minecraft.getMinecraft().thePlayer == null) {
-                tries++;
-                if (tries > 20 * 10) {
-                    return;
+        Multithreading.runAsync(new Runnable() {
+            public void run() {
+                while (Minecraft.getMinecraft().thePlayer == null) {
+                    tries++;
+                    if (tries > 20 * 10) {
+                        return;
+                    }
+                    try {
+                        Thread.sleep(50L);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-                try {
-                    Thread.sleep(50L);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                getIsHypixel();
+                String apiCommand = "/api";
+                Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
             }
-            getIsHypixel();
-            String apiCommand = "/api";
-            Minecraft.getMinecraft().thePlayer.sendChatMessage(apiCommand);
         });
     }
 
