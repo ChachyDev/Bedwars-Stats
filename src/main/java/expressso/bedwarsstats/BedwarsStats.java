@@ -14,9 +14,12 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.apache.commons.logging.impl.Log4JLogger;
 
 import java.io.File;
+import java.util.logging.Logger;
 
 import static expressso.bedwarsstats.config.Settings.setApiChecked;
 import static expressso.bedwarsstats.utils.HypixelUtils.getIsHypixel;
@@ -38,8 +41,13 @@ public class BedwarsStats {
         ClientCommandHandler.instance.registerCommand(new ForceUpdate());
         ConfigManager.loadSettings();
         //System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-        Keybinds.load();
+    }
+
+    @EventHandler
+    public void postinit(FMLPostInitializationEvent event) {
         RichPresenceManager.run("431086888804286465");
+        System.out.println("RPC Loaded!");
+        Keybinds.load();
     }
 
     @SubscribeEvent
