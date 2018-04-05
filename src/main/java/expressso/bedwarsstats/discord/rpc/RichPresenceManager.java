@@ -21,7 +21,7 @@ public class RichPresenceManager {
             @Override
             public void disconnected(ErrorCode errorCode, String message)
             {
-                System.err.println("CLASS DISCONNECTED : " + errorCode + " " + message);
+                System.err.println("DISCONNECTED : " + errorCode + " " + message);
             }
 
             @Override
@@ -33,19 +33,19 @@ public class RichPresenceManager {
             @Override
             public void joinGame(String joinSecret)
             {
-                System.err.println("CLASS JOIN GAME : " + joinSecret);
+                System.err.println("JOIN GAME : " + joinSecret);
             }
 
             @Override
             public void spectateGame(String spectateSecret)
             {
-                System.err.println("CLASS SPECTATE GAME : " + spectateSecret);
+                System.err.println("SPECTATE GAME : " + spectateSecret);
             }
 
             @Override
             public void joinRequest(DiscordJoinRequest joinRequest)
             {
-                System.err.println("CLASS JOIN REQUEST : " + joinRequest);
+                System.err.println("JOIN REQUEST : " + joinRequest);
             }
         };
 
@@ -62,11 +62,11 @@ public class RichPresenceManager {
             for (int i = 0; i < 10000; ++i)
             {
                 DiscordRichPresence discordRichPresence = new DiscordRichPresence();
-                discordRichPresence.setState("Playing");
+                discordRichPresence.setState("Playing Bedwars on hypixel.net ");
                 discordRichPresence.setDetails("IGN: " + Minecraft.getMinecraft().thePlayer.getDisplayNameString());
                 discordRichPresence.setStartTimestamp(start);
                 discordRichPresence.setEndTimestamp(end);
-                //discordRichPresence.setLargeImageKey("icon-large");
+                discordRichPresence.setLargeImageKey("icon-large");
                 //discordRichPresence.setSmallImageKey("icon-small");
                 discordRichPresence.setPartyId("ALONE");
                 discordRichPresence.setPartySize(1);

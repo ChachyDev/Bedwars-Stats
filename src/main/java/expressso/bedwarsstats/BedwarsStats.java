@@ -41,12 +41,6 @@ public class BedwarsStats {
         ClientCommandHandler.instance.registerCommand(new ForceUpdate());
         ConfigManager.loadSettings();
         //System.out.println("[BedwarsStats] MCDIR Found! " + ConfigFile);
-    }
-
-    @EventHandler
-    public void postinit(FMLPostInitializationEvent event) {
-        RichPresenceManager.run("431086888804286465");
-        System.out.println("RPC Loaded!");
         Keybinds.load();
     }
 

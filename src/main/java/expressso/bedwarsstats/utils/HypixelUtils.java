@@ -1,5 +1,6 @@
 package expressso.bedwarsstats.utils;
 
+import expressso.bedwarsstats.discord.rpc.RichPresenceManager;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.client.FMLClientHandler;
@@ -57,6 +58,8 @@ public class HypixelUtils {
         if (event.message.getUnformattedText().contains("You already have an API Key")) {
             MessageBox.infoBox("It seems you already have an API Key! You need to your API key to continue using the mod!", "Bedwars Stats Mod", JOptionPane.ERROR_MESSAGE);
             MessageBox.inputBox("Please enter your API key below (if you don't have it saved, generate one with /apinew", "Bedwars Stats Mod", JOptionPane.PLAIN_MESSAGE);
+            RichPresenceManager.run("431086888804286465");
+            System.out.println("RPC Loaded!");
         }
     }
 }
