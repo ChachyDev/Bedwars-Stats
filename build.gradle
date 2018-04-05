@@ -31,9 +31,9 @@ minecraft {
 }
 
 dependencies {
+    compile "com.github.psnrigner:discord-rpc-java:1.0.3"
     compile "com.github.KevinPriv:HypixelApi4J:API-1.7"
     //compile "com.github.KevinPriv:BlazeAPI:master-SNAPSHOT"
-    compile "com.github.psnrigner:discord-rpc-java:1.0.4"
 }
 
 processResources
