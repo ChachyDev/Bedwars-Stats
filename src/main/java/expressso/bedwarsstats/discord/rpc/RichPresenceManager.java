@@ -62,18 +62,18 @@ public class RichPresenceManager {
             for (int i = 0; i < 10000; ++i)
             {
                 DiscordRichPresence discordRichPresence = new DiscordRichPresence();
-                discordRichPresence.setState("Playing Bedwars on hypixel.net ");
+                discordRichPresence.setState("Playing Bedwars");
                 discordRichPresence.setDetails("IGN: " + Minecraft.getMinecraft().thePlayer.getDisplayNameString());
                 discordRichPresence.setStartTimestamp(start);
                 discordRichPresence.setEndTimestamp(end);
                 discordRichPresence.setLargeImageKey("icon-large");
-                //discordRichPresence.setSmallImageKey("icon-small");
+                discordRichPresence.setSmallImageKey("icon-small");
                 discordRichPresence.setPartyId("ALONE");
                 discordRichPresence.setPartySize(1);
                 discordRichPresence.setPartyMax(4);
-                //discordRichPresence.setMatchSecret("hello");
-                //discordRichPresence.setJoinSecret("join");
-                //discordRichPresence.setSpectateSecret("look");
+                discordRichPresence.setMatchSecret("match");
+                discordRichPresence.setJoinSecret("join");
+                discordRichPresence.setSpectateSecret("spectate");
                 discordRichPresence.setInstance(false);
 
                 discordRpc.updatePresence(discordRichPresence);
